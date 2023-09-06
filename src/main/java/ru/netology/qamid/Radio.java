@@ -53,11 +53,10 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume > maxVolume) {
-            return;
-        }
-        if (currentVolume < 0) {
-            return;
+        if (currentVolume >= maxVolume)
+            currentVolume = 100;
+        if (currentVolume <= 0) {
+            currentVolume = 0;
         }
         this.currentVolume = currentVolume;
     }
@@ -72,11 +71,11 @@ public class Radio {
     }
 
     public void prevVolume() {
-        if (currentVolume != maxVolume) {
+        if (currentVolume <= maxVolume) {
             currentVolume--;
         }
-        if (currentVolume < 0) {
-            currentVolume= 0;
+        if (currentVolume <= 0) {
+            currentVolume = 0;
         }
     }
 }
