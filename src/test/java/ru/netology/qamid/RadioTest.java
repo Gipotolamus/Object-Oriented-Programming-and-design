@@ -74,6 +74,17 @@ class RadioTest {
     }
 
     @Test
+    public void nextChannelTest() {
+        Radio radio = new Radio();
+
+        radio.setCurrentChannel(8);
+        radio.next();
+        int expected = 9;
+        int actual = radio.getCurrentChannel();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void nextChannelUp() {
         Radio radio = new Radio();
 
