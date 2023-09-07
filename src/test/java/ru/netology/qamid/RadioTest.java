@@ -28,6 +28,7 @@ class RadioTest {
         int actual = radio.getCurrentChannel();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
 
     public void currentChannel() {
@@ -149,6 +150,7 @@ class RadioTest {
         int actual = radio.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void nextVolumeLevelIncrease() {
         Radio radio = new Radio();
