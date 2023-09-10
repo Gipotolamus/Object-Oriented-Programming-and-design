@@ -3,18 +3,16 @@ package ru.netology.qamid;
 public class Radio {
     private int currentVolume;
     private int currentChannel;
-    private final int maxChannel;
-    private final int maxVolume;
+    private int maxChannel;
 
 
     public Radio() {
         this.maxChannel = 9;
-        this.maxVolume = 100;
     }
 
-    public Radio(int channel, int volume) {
+    public Radio(int channel) {
         this.maxChannel = channel - 1;
-        this.maxVolume = volume - 1;
+        ;
     }
 
     public int getCurrentChannel() {
@@ -40,11 +38,10 @@ public class Radio {
     }
 
     public void prev() {
-        if (currentChannel != maxChannel) {
+        if (currentChannel != 0) {
             currentChannel--;
-        }
-        if (currentChannel < 0) {
-            currentChannel = maxChannel;
+        } else {
+            currentChannel = 9;
         }
     }
 
@@ -53,8 +50,9 @@ public class Radio {
     }
 
     public void setCurrentVolume(int currentVolume) {
-        if (currentVolume >= maxVolume)
+        if (currentVolume >= 100) {
             currentVolume = 100;
+        }
         if (currentVolume <= 0) {
             currentVolume = 0;
         }
@@ -62,20 +60,17 @@ public class Radio {
     }
 
     public void nextVolume() {
-        if (currentVolume < maxVolume) {
+        if (currentVolume < 100) {
             currentVolume++;
         }
-        if (currentVolume >= maxVolume) {
-            currentVolume = maxVolume;
+        if (currentVolume >= 100) {
+            currentVolume = 100;
         }
     }
 
     public void prevVolume() {
-        if (currentVolume <= maxVolume) {
+        if (currentVolume != 0) {
             currentVolume--;
-        }
-        if (currentVolume <= 0) {
-            currentVolume = 0;
         }
     }
 }
