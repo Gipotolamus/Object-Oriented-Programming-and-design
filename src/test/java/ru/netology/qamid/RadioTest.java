@@ -2,26 +2,12 @@ package ru.netology.qamid;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.CsvSource;
 
 class RadioTest {
-//    @ParameterizedTest
-//    @CsvSource({
-//            "6,4,4"
-//    }) // Работает
-
-    //    @CsvFileSource(files = "src/test/java/resources/setChannel.csv")
-//    public void currentChannel(int getCurrentChannel, int currentChannel, int expected) {
-//        Radio radio = new Radio(9);
-//        int actual = radio.getCurrentChannel(getCurrentChannel, currentChannel, expected);
-//        Assertions.assertEquals(expected, actual);
-//    }
 
     @Test
     public void currentChannelNoLimit() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(10);
 
         radio.setCurrentChannel(-4);
         int expected = 0;

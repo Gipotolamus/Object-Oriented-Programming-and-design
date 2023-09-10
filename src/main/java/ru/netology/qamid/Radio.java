@@ -3,7 +3,7 @@ package ru.netology.qamid;
 public class Radio {
     private int currentVolume;
     private int currentChannel;
-    private final int maxChannel;
+    private int maxChannel;
 
 
     public Radio() {
@@ -12,7 +12,6 @@ public class Radio {
 
     public Radio(int channel) {
         this.maxChannel = channel - 1;
-        ;
     }
 
     public int getCurrentChannel() {
